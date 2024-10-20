@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+    <header>
+        <h1>Upcoming Events</h1>
+    </header>
+    <main id="events-container"></main>
+
+    <button id="logout-btn" onclick="logout()">Logout</button>
+    <script>
+        function logout() {
+            window.location.href = "http://localhost:4000"; // Redirect to the login page
+        }
+    </script>
+    <style>
+        #logout-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 100px;
+            padding: 8px;
+            font-size: 14px;
+            background-color: #DC3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        #logout-btn:hover {
+            background-color: #C82333;
+        }
+    </style>
+    <script src="events.js"></script>
+</body>
+</html>

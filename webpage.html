@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="webpage.js"></script>
+</head>
+<body>
+    <strong>श्रमं विना न किमपि साध्यम्</strong>
+    <img src="IITR logo.webp" alt="IITR logo" height="50px" width="50px">
+    <div>
+        <h1>Welcome to IIT Roorkee</h1>
+        <br><br><br>
+        <p>Feeling lost with what to do and where to go in your first year? Tired of searching for clubs and events?
+        </p>
+        <p>We are here to simplify things for you! Our goal is to provide all the essential information you need to
+            navigate your first year smoothly. From clubs and societies to events and student resources, we’ve got you
+            covered. No more confusion, no more endless searching – just everything you need, in one place</p>
+    </div>
+    <hr>
+    <div>
+        <h3>What do we have for you :-</h3>
+        <div class="container">
+            <button id="toggleButton1" class="button">Clubs</button>
+            <div id="slideOutDescription1" class="description">
+                <p>Clubs are a great way to connect with others. Inorder to find a club that best suits your interests
+                    we have provided a list of clubs and relevant information regarding them. <br>For detailed
+                    information click below :-<br><a href="clubs.html">clubs Information Brochure</a></p>
+            </div>
+        </div>
+        <div class="container">
+            <button id="toggleButton2" class="button">study material</button>
+            <div id="slideOutDescription2" class="description">
+                <p>One of the most worst thing about first year is that you don't know what and from where to study. If
+                    you are also facing this problem then no need to worry , just click on the link given below.
+                    <br><a href="studymaterial.html">Study Material</a></p>
+            </div>
+        </div>
+        <div class="container">
+            <button id="toggleButton3" class="button">Events</button>
+            <div id="slideOutDescription3" class="description">
+                <p>Events are the most memorable and exciting part of your college life. These events can be a vibrant
+                    and enriching part of your college experience. They offer opportunities for personal growth, skill
+                    development, and community building. We here at IIT Roorkee celebrate many events throughout the
+                    academic year. <br>For detailed information click below :-<br><a href="events.html">Events Information Brochure</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="chatbot-wrapper">
+        <div id="chatbot-icon"></div>
+    </div>
+    <div id="tooltip">If you need any help, PyBot can help you!</div>
+    <div class="chat-container">
+        <input type="text" id="message" placeholder="Type your message here..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+        <p id="response"></p>
+    </div>
+    <style>
+        #logout-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 100px;
+            padding: 8px;
+            font-size: 14px;
+            background-color: #DC3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+    
+        #logout-btn:hover {
+            background-color: #C82333;
+        }
+    </style>
+    <button id="logout-btn" onclick="logout()">Logout</button>
+    <script>
+        function logout() {
+            window.location.href = "http://localhost:4000"; // Redirect to the login page
+        }
+    </script>
+    
+</body>
+</html>

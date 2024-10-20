@@ -1,0 +1,37 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-image: url('images/high\ quality\ library\ photo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+div {
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+a {
+    color: #87CEEB; /* Sky blue color */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00BFFF; /* Deeper sky blue on hover */
+}
+
+h2 {
+    background-color: rgba(11, 186, 225, 0.7); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 0; /* Add some margin to separate boxes */
+    color: #ffffff;
+}

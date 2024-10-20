@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin2.css">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <div class="admin-options">
+        <p>Welcome, Admin! This is your dashboard.</p>
+        <button onclick="handleEvents()">Manage Events</button>
+    </div>
+    <div id="event-options" style="display:none;">
+        <button onclick="addEvent()">Add New Event</button>
+        <button onclick="fetchEvents()">Update Old Event</button>
+        <button onclick="clearEvents()">Clear All Events</button>
+    </div>
+    <div id="event-form" style="display:none;">
+        <h2>Add New Event</h2>
+        <label for="event-title">Event Title:</label>
+        <input type="text" id="event-title" name="event-title" required>
+        <label for="event-date">Event Date:</label>
+        <input type="date" id="event-date" name="event-date" required>
+        <label for="event-description">Event Description:</label>
+        <textarea id="event-description" name="event-description" required></textarea>
+        <button onclick="saveEvent()">Save</button>
+    </div>
+    <div id="event-list" style="display:none;">
+        <h2>Select Event to Update</h2>
+        <ul id="events"></ul>
+    </div>
+    <div id="update-event-form" style="display:none;">
+        <h2>Update Event</h2>
+        <label for="update-event-title">Event Title:</label>
+        <input type="text" id="update-event-title" name="update-event-title" required>
+        <label for="update-event-date">Event Date:</label>
+        <input type="date" id="update-event-date" name="update-event-date" required>
+        <label for="update-event-description">Event Description:</label>
+        <textarea id="update-event-description" name="update-event-description" required></textarea>
+        <button onclick="sendUpdateEvent()">Update</button>
+        <button onclick="deleteEvent()">Delete</button> <!-- Added delete button -->
+    </div>
+    
+    <button id="logout-btn" onclick="logout()">Logout</button>
+    <script>
+        function handleEvents() {
+            document.getElementById("event-options").style.display = "block";
+            document.getElementById("event-form").style.display = "none";
+            document.getElementById("update-event-form").style.display = "none";
+        }
+
+        function addEvent() {
+            document.getElementById("event-form").style.display = "block";
+            document.getElementById("event-options").style.display = "none";
+            document.getElementById("update-event-form").style.display = "none";
+        }
+
+        async function saveEvent() {
+            const title = document.getElementById("event-title").value;
+            const date = document.getElementById("event-date").value;
+            const description = document.getElementById("event-description").value;
+
+            const event = { title, date, description };
+
+            try {
+                const response = await fetch('http://localhost:10000/save_event', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(event)
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert(data.message);
+                    document.getElementById("event-title").value = '';
+                    document.getElementById("event-date").value = '';
+                    document.getElementById("event-description").value = '';
+                    document.getElementById("event-form").style.display = "none";
+                } else {
+                    alert("Error saving event");
+                }
+            } catch (error) {
+                alert("Network error: " + error.message);
+            }
+        }
+
+        async function fetchEvents() {
+            try {
+                const response = await fetch('http://localhost:10000/get_events');
+                const events = await response.json();
+                const eventsList = document.getElementById('events');
+                eventsList.innerHTML = '';
+                events.forEach(event => {
+                    const li = document.createElement('li');
+                    li.textContent = event.title;
+                    li.classList.add('event-item');
+                    li.onclick = () => selectEvent(event);
+                    eventsList.appendChild(li);
+                });
+                document.getElementById("event-list").style.display = "block";
+                document.getElementById("event-options").style.display = "none";
+            } catch (error) {
+                alert("Error fetching events: " + error.message);
+            }
+        }
+
+        function selectEvent(event) {
+            document.getElementById("update-event-title").value = event.title;
+            document.getElementById("update-event-date").value = event.date;
+            document.getElementById("update-event-description").value = event.description;
+            document.getElementById("update-event-form").style.display = "block";
+            document.getElementById("event-list").style.display = "none";
+        }
+
+        async function sendUpdateEvent() {
+            const title = document.getElementById("update-event-title").value;
+            const date = document.getElementById("update-event-date").value;
+            const description = document.getElementById("update-event-description").value;
+
+            const updatedEvent = { title, date, description };
+
+            try {
+                const response = await fetch('http://localhost:10000/update_event', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedEvent)
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert(data.message);
+                    document.getElementById("update-event-title").value = '';
+                    document.getElementById("update-event-date").value = '';
+                    document.getElementById("update-event-description").value = '';
+                    document.getElementById("update-event-form").style.display = "none";
+                } else {
+                    alert("Error updating event");
+                }
+            } catch (error) {
+                alert("Network error: " + error.message);
+            }
+        }
+
+        async function clearEvents() {
+            try {
+                const response = await fetch('http://localhost:10000/clear_events', {
+                    method: 'POST'
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert(data.message);
+                } else {
+                    alert("Error clearing events");
+                }
+            } catch (error) {
+                alert("Network error: " + error.message);
+            }
+        }
+
+        
+    async function deleteEvent() {
+        const title = document.getElementById("update-event-title").value;
+
+        try {
+            const response = await fetch('http://localhost:10000/delete_event', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ title })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert(data.message);
+                document.getElementById("update-event-title").value = '';
+                document.getElementById("update-event-date").value = '';
+                document.getElementById("update-event-description").value = '';
+                document.getElementById("update-event-form").style.display = "none";
+            } else {
+                alert("Error deleting event");
+            }
+        } catch (error) {
+            alert("Network error: " + error.message);
+        }
+    }
+
+
+        function logout() {
+            window.location.href = "http://localhost:4000";
+        }
+    </script>
+</body>
+</html>

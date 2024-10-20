@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <h1>Admin Login</h1>
+    <form id="admin-login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="button" onclick="adminLogin()">Login</button>
+    </form>
+    <p id="login-error" style="color:red;"></p>
+    <script>
+        document.getElementById("admin-login-form").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Prevent form submission
+                adminLogin();
+            }
+        });
+
+        function adminLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            if (username === "admin" && password === "admin123") {  // Hardcoded for now
+                window.location.href = "http://localhost:10000";
+            } else {
+                document.getElementById("login-error").innerText = "Invalid username or password.";
+            }
+        }
+    </script>
+</body>
+</html>

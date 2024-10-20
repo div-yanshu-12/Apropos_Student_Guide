@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*background-color: rgb(132, 126, 117);*/
+            font-family: Arial, sans-serif;
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        div {
+            align-items: center;
+            text-align: center;
+        }
+        /* Button styles */
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #45a049;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+        }
+        button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+        }
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="logout-btn" onclick="logout()">Logout</button>
+    <script>
+        function logout() {
+            window.location.href = "http://localhost:4000"; // Redirect to the login page
+        }
+    </script>
+    <style>
+        #logout-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 100px;
+            padding: 8px;
+            font-size: 14px;
+            background-color: #DC3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        #logout-btn:hover {
+            background-color: #C82333;
+        }
+    </style>
+    
+    <div class="image-slider">
+        <h1> Clubs @ IIT Roorkee</h1>
+        <img src="images\IITR clubs information brochure-page-001.jpg" alt="Image 1">
+        <div><h2>Contents</h2>
+            <button onclick="scrollToImage4()">ACM</button>
+            <button onclick="scrollToImage5()">Airsoc</button>
+            <button onclick="scrollToImage6()">Aries</button>
+            <button onclick="scrollToImage7()">Asme</button>
+            <button onclick="scrollToImage8()">Blocsoc</button>
+            <button onclick="scrollToImage9()">CIG</button>
+            <button onclick="scrollToImage10()">Design Studio</button>
+            <button onclick="scrollToImage11()">DSG</button>
+            <button onclick="scrollToImage12()">E-Cell</button>
+            <button onclick="scrollToImage13()">Enactus</button>
+            <button onclick="scrollToImage14()">Finance Club</button>
+            <button onclick="scrollToImage15()">iGem</button>
+            <button onclick="scrollToImage16()">IITRmotorsports</button>
+            <button onclick="scrollToImage17()">IMG</button>
+            <button onclick="scrollToImage18()">Infosec</button>
+            <button onclick="scrollToImage19()">MARS</button>
+            <button onclick="scrollToImage20()">MDG Space</button>
+            <button onclick="scrollToImage21()">PAG</button>
+            <button onclick="scrollToImage22()">PaAC</button>
+            <button onclick="scrollToImage23()">QCG</button>
+            <button onclick="scrollToImage24()">Robocon</button>
+            <button onclick="scrollToImage25()">SAE</button>
+            <button onclick="scrollToImage26()">SDSLabs</button>
+            <button onclick="scrollToImage27()">Share-IITR</button>
+            <button onclick="scrollToImage28()">Team KNOx</button>
+            <button onclick="scrollToImage29()">Tinkering Lab</button>
+            <button onclick="scrollToImage30()">VLG</button>
+            <button onclick="scrollToImage32()">Audio Section</button>
+            <button onclick="scrollToImage33()">Choreography and dance section</button>
+            <button onclick="scrollToImage34()">Cinema club</button>
+            <button onclick="scrollToImage35()">Cinematics section</button>
+            <button onclick="scrollToImage36()">Culinary Club</button>
+            <button onclick="scrollToImage37()">Debating society</button>
+            <button onclick="scrollToImage38()">Dramatics section</button>
+            <button onclick="scrollToImage39()">Fine arts</button>
+            <button onclick="scrollToImage41()">Music section</button>
+            <button onclick="scrollToImage42()">ON rec</button>
+            <button onclick="scrollToImage43()">Photography Club</button>
+            <button onclick="scrollToImage44()">Quizzing section</button>
+            <button onclick="scrollToImage45()">Spic macay</button>
+            <button onclick="scrollToImage46()">standup section</button>
+            <button onclick="scrollToImage51()">Out Reach</button>
+            <button onclick="scrollToImage53()">UBA</button>
+            <button onclick="scrollToImage55()">Geek Gazette</button>
+            <button onclick="scrollToImage56()">Kshitij-IITR</button>
+            <button onclick="scrollToImage57()">Watch out</button>
+            <button onclick="scrollToImage67()">E-Sports IITR</button>
+            <button onclick="scrollToImage68()">Himalayan Explorers Club</button>
+            <button onclick="scrollToImage73()">Wellness Centre</button>
+            <br><br><br>
+        </div>
+        <img src="images\IITR clubs information brochure-page-003.jpg" alt="Image 3">
+        <img id="acm" src="images\IITR clubs information brochure-page-004.jpg" alt="Image 4">   
+        <img id="airsoc" src="images\IITR clubs information brochure-page-005.jpg" alt="Image 5">
+        <img id="aries" src="images\IITR clubs information brochure-page-006.jpg" alt="Image 6">
+        <img id="asme" src="images\IITR clubs information brochure-page-007.jpg" alt="Image 7">
+        <img id="blocsoc" src="images\IITR clubs information brochure-page-008.jpg" alt="Image 8">
+        <img id="cig" src="images\IITR clubs information brochure-page-009.jpg" alt="Image 9">
+        <img id="design studio" src="images\IITR clubs information brochure-page-010.jpg" alt="Image 10">
+        <img id="dsg" src="images\IITR clubs information brochure-page-011.jpg" alt="Image 11">
+        <img id="ecell" src="images\IITR clubs information brochure-page-012.jpg" alt="Image 12">
+        <img id="enactus" src="images\IITR clubs information brochure-page-013.jpg" alt="Image 13">
+        <img id="finance club" src="images\IITR clubs information brochure-page-014.jpg" alt="Image 14">
+        <img id= "igem" src="images\IITR clubs information brochure-page-015.jpg" alt="Image 15">
+        <img id="iitr motorsports" src="images\IITR clubs information brochure-page-016.jpg" alt="Image 16">
+        <img id="img" src="images\IITR clubs information brochure-page-017.jpg" alt="Image 17">
+        <img id="infosec" src="images\IITR clubs information brochure-page-018.jpg" alt="Image 18">
+        <img id="mars" src="images\IITR clubs information brochure-page-019.jpg" alt="Image 19">
+        <img id="mdg space" src="images\IITR clubs information brochure-page-020.jpg" alt="Image 20">
+        <img id="pag" src="images\IITR clubs information brochure-page-021.jpg" alt="Image 21">
+        <img id="paac" src="images\IITR clubs information brochure-page-022.jpg" alt="Image 22">
+        <img id="qcg" src="images\IITR clubs information brochure-page-023.jpg" alt="Image 23">
+        <img id="robocon" src="images\IITR clubs information brochure-page-024.jpg" alt="Image 24">
+        <img id="sae" src="images\IITR clubs information brochure-page-025.jpg" alt="Image 25">
+        <img id="sdslabs" src="images\IITR clubs information brochure-page-026.jpg" alt="Image 26">
+        <img id="share iitr" src="images\IITR clubs information brochure-page-027.jpg" alt="Image 27">
+        <img id="team knox" src="images\IITR clubs information brochure-page-028.jpg" alt="Image 28">
+        <img id="tinkering lab" src="images\IITR clubs information brochure-page-029.jpg" alt="Image 29">
+        <img id="vlg" src="images\IITR clubs information brochure-page-030.jpg" alt="Image 30">
+        <img src="images\IITR clubs information brochure-page-031.jpg" alt="Image 31">
+        <img id="image32"src="images\IITR clubs information brochure-page-032.jpg" alt="Image 32">
+        <img id="image33"src="images\IITR clubs information brochure-page-033.jpg" alt="Image 33">
+        <img id="image34" src="images\IITR clubs information brochure-page-034.jpg" alt="Image 34">
+        <img id="image35"src="images\IITR clubs information brochure-page-035.jpg" alt="Image 35">
+        <img id="image36"src="images\IITR clubs information brochure-page-036.jpg" alt="Image 36">
+        <img id="image37"src="images\IITR clubs information brochure-page-037.jpg" alt="Image 37">
+        <img id="image38"src="images\IITR clubs information brochure-page-038.jpg" alt="Image 38">
+        <img id="image39"src="images\IITR clubs information brochure-page-039.jpg" alt="Image 39">
+        <img id="image41"src="images\IITR clubs information brochure-page-041.jpg" alt="Image 41">
+        <img id="image42"src="images\IITR clubs information brochure-page-042.jpg" alt="Image 42">
+        <img id="image43"src="images\IITR clubs information brochure-page-043.jpg" alt="Image 43">
+        <img id="image44"src="images\IITR clubs information brochure-page-044.jpg" alt="Image 44">
+        <img id="image45"src="images\IITR clubs information brochure-page-045.jpg" alt="Image 45">
+        <img id="image46"src="images\IITR clubs information brochure-page-046.jpg" alt="Image 46">
+        <img id="image47"src="images\IITR clubs information brochure-page-047.jpg" alt="Image 47">
+        <img id="image51"src="images\IITR clubs information brochure-page-051.jpg" alt="Image 51">
+        <img id="image53" src="images\IITR clubs information brochure-page-053.jpg" alt="Image 53">
+        <img id="image54" src="images\IITR clubs information brochure-page-054.jpg" alt="Image 54">  
+        <img id="image55"src="images\IITR clubs information brochure-page-055.jpg" alt="Image 55">
+        <img id="image56"src="images\IITR clubs information brochure-page-056.jpg" alt="Image 56">
+        <img id="image57"src="images\IITR clubs information brochure-page-057.jpg" alt="Image 57">
+        <img id="image58"src="images\IITR clubs information brochure-page-058.jpg" alt="Image 58">
+        <img id="image64"src="images\IITR clubs information brochure-page-064.jpg" alt="Image 64">
+        <img id="image67"src="images\IITR clubs information brochure-page-067.jpg" alt="Image 67">
+        <img id="image68"src="images\IITR clubs information brochure-page-068.jpg" alt="Image 68">
+        <img id="image73"src="images\IITR clubs information brochure-page-073.jpg" alt="Image 73">
+    </div>
+    <script>
+        function scrollToImage4() {
+            const image = document.getElementById('acm');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage5() {
+            const image = document.getElementById('airsoc');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage6() {
+            const image = document.getElementById('aries');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage7() {
+            const image = document.getElementById('asme');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage8() {
+            const image = document.getElementById('blocsoc');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage9() {
+            const image = document.getElementById('cig');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage10() {
+            const image = document.getElementById('design studio');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage11() {
+            const image = document.getElementById('dsg');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage12() {
+            const image = document.getElementById('ecell');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage13() {
+            const image = document.getElementById('enactus');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage14() {
+            const image = document.getElementById('finance club');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage15() {
+            const image = document.getElementById('igem');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage16() {
+            const image = document.getElementById('iitr motorsports');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage17() {
+            const image = document.getElementById('img');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage18() {
+            const image = document.getElementById('infosec');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage19() {
+            const image = document.getElementById('mars');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage20() {
+            const image = document.getElementById('mdg space');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage21() {
+            const image = document.getElementById('pag');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage22() {
+            const image = document.getElementById('paac');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }function scrollToImage23() {
+            const image = document.getElementById('qcg');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage24() {
+            const image = document.getElementById('robocon');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage25() {
+            const image = document.getElementById('sae');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage26() {
+            const image = document.getElementById('sds labs');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage27() {
+            const image = document.getElementById('share iitr');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage28() {
+            const image = document.getElementById('team knox');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage29() {
+            const image = document.getElementById('tinkering lab');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage30() {
+            const image = document.getElementById('vlg');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage32() {
+            const image = document.getElementById('image32');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage33() {
+            const image = document.getElementById('image33');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage34() {
+            const image = document.getElementById('image34');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage35() {
+            const image = document.getElementById('image35');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage36() {
+            const image = document.getElementById('image36');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage38() {
+            const image = document.getElementById('image38');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage39() {
+            const image = document.getElementById('image39');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage41() {
+            const image = document.getElementById('image41');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage42() {
+            const image = document.getElementById('image42');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage43() {
+            const image = document.getElementById('image43');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage44() {
+            const image = document.getElementById('image44');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage45() {
+            const image = document.getElementById('image45');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage46() {
+            const image = document.getElementById('image46');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage51() {
+            const image = document.getElementById('image51');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage53() {
+            const image = document.getElementById('image53');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage55() {
+            const image = document.getElementById('image55');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage56() {
+            const image = document.getElementById('image56');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage57() {
+            const image = document.getElementById('image57');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage67() {
+            const image = document.getElementById('image67');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage68() {
+            const image = document.getElementById('image68');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function scrollToImage73() {
+            const image = document.getElementById('image73');
+            image.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+</body>
+</html>

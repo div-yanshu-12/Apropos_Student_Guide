@@ -1,0 +1,65 @@
+{
+    "intents": [
+        {
+            "tag": "admin_credentials",
+            "patterns": ["admin", "admin@example.com"],
+            "responses": ["admin", "admin123"]
+        },
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi", "Hello", "Hey", "Good morning", "Good evening", "Greetings", 
+                "What's up", "Howdy", "How are you", "Hi there", "Hey there",
+                "Good day", "Good afternoon", "Hello there", "Yo", "Hiya",
+                "What's good", "Sup", "Hey, what's up?", "How's it going?",
+                "Long time no see", "Nice to meet you", "Hey, how's everything?",
+                "Hi, how's your day?", "Hello, how's it going?", "Hey, how've you been?"
+            ],
+            "responses": [
+                "Hello!", "Hi there!", "Hey! How can I help you?", "Greetings!",
+                "Good to see you!", "What's up?", "Howdy!", "How are you doing?",
+                "Hey! What's new?", "Hi, how can I assist you today?", "Hello, how's everything?",
+                "Nice to see you!"
+            ]
+        },
+        {
+            "tag": "ASME",
+            "patterns": [
+                "Tell me about ASME", "What is ASME", "American Society of Mechanical Engineers", "ASME details", "Explain ASME",
+                "ASME info", "ASME information", "ASME club", "ASME IIT Roorkee"
+            ],
+            "responses": [
+                "American Society of Mechanical Engineers (ASME) is for Mechanical and Industrial Engineering students. If you need detailed info about the club, you can go through our webpage.",
+                "ASME focuses on Mechanical and Industrial Engineering. If you need more info, visit our webpage.",
+                "Interested in ASME? It is the American Society of Mechanical Engineers for students at IIT Roorkee. Check out our webpage for detailed info.",
+                "ASME at IIT Roorkee provides opportunities for Mechanical and Industrial Engineering students. More details on our webpage."
+            ]
+        },
+        {
+            "tag": "sdslabs",
+            "patterns": [
+                "Tell me about SDSLabs", "What is SDSLabs", "SDSLabs information", "SDSLabs details", "Explain SDSLabs",
+                "What does SDSLabs do?", "Purpose of SDSLabs", "SDSLabs projects", "SDSLabs achievements",
+                "How does SDSLabs work?", "Why join SDSLabs?", "SDSLabs opportunities", "sds labs"
+            ],
+            "responses": [
+                "SDSLabs is a student-driven lab at IIT Roorkee, focusing on software development and innovation. If you need detailed info about the club, you can go through our webpage.",
+                "SDSLabs works on a range of software projects and provides a platform for students to develop their coding skills. If you need detailed info about the club, you can go through our webpage.",
+                "SDSLabs has been involved in numerous innovative projects, hackathons, and tech events. If you need detailed info about the club, you can go through our webpage.",
+                "Joining SDSLabs offers opportunities to work on real-world projects, collaborate with skilled peers, and enhance your technical expertise. If you need detailed info about the club, you can go through our webpage."
+            ]
+        },
+        {
+            "tag": "Vittarth",
+            "patterns": [
+                "Tell me about Vittarth", "What is Vittarth", "Vittarth details", "Explain Vittarth"
+            ],
+            "responses": [
+                "Vittarth is the Finance club promoting financial awareness. If you need detailed info about the club, you can go through our webpage.",
+                "Interested in finance? Vittarth is IIT Roorkee’s Finance Club. For more details, check out our webpage.",
+                "Vittarth focuses on financial education and awareness. Visit our webpage for detailed info.",
+                "Vittarth promotes financial literacy and offers opportunities for students interested in finance. Check our webpage for more info."
+            ]
+        }
+    ]
+}
